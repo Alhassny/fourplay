@@ -408,12 +408,9 @@ function play(guild, song) {
 
 //admin
 
-const child_process = require("child_process");
-const adminprefix = "4";
 const devs = ['449313863494664214','228401267263668224','326131905743421440'];
 
 client.on('message', message => {
-      if (!devs.includes(message.author.id)) return message.channel.send("<@449313863494664214> only they can do restart the bot so don't try again :wink:.");
     let argresult = message.content.split(` `).slice(1).join(' ');
     if (message.content.startsWith(prefix + 'setStreaming')) {
       if (!devs.includes(message.author.id)) return message.channel.send("<@449313863494664214> only this guy can do restart the bot so don't try again :wink:.");
@@ -437,6 +434,7 @@ client.on('message', message => {
 
 
       } else if(message.content.startsWith(prefix + 'setStatus')) {
+	            if (!devs.includes(message.author.id)) return message.channel.send("<@449313863494664214> only they can do restart the bot so don't try again :wink:.");
         if(!argresult) return message.channel.send('`online`, `DND(Do not Distrub),` `idle`, `invisible(Offline)` :notes: أختر أحد الحالات');
         client.user.setStatus(argresult);
 
