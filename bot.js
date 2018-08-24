@@ -434,7 +434,6 @@ client.on('message', message => {
 
 
       } else if(message.content.startsWith(prefix + 'setStatus')) {
-	            if (!devs.includes(message.author.id)) return message.channel.send("<@449313863494664214> only they can do restart the bot so don't try again :wink:.");
         if(!argresult) return message.channel.send('`online`, `DND(Do not Distrub),` `idle`, `invisible(Offline)` :notes: أختر أحد الحالات');
         client.user.setStatus(argresult);
 
